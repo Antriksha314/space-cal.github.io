@@ -9,7 +9,7 @@ function flushOperations(intBuffer) {
     case "+":
       runningTotal += intBuffer;
       break;
-    case "-":
+    case "−":
       runningTotal -= intBuffer;
       break;
     case "×":
@@ -37,7 +37,7 @@ function handleMath(symbol) {
   }
   const intBuffer = parseInt(buffer);
   if (runningTotal === 0) {
-    runningTotal = buffer;
+    runningTotal = intBuffer;
   } else {
     flushOperations(intBuffer);
   }
@@ -64,7 +64,7 @@ function handleSymbol(symbol) {
     case "+":
       handleMath(symbol);
       break;
-    case "-":
+    case "−":
       handleMath(symbol);
       break;
     case "×":
